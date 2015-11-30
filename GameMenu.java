@@ -3,7 +3,7 @@ import javax.swing.*;
 
 
 
-public class gameMenu {
+public class GameMenu {
 	public static void main(String args[]){
 
 	JFrame menuFrame = new JFrame("Main Menu");
