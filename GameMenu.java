@@ -10,13 +10,13 @@ import javax.imageio.*;
 
 
 public class gameMenu {
-	public static void main(String args[]){
+  public static void main(String args[]){
 
-	JFrame menuFrame = new JFrame("Main Menu");
-	JPanel menuPanel = new JPanel();
+  JFrame menuFrame = new JFrame("Main Menu");
+  JPanel menuPanel = new JPanel();
   JPanel optionsPanel = new JPanel();
   JLabel statusLabel = new JLabel("", JLabel.CENTER);
-	JLabel nameLabel = new JLabel("Name:",JLabel.LEFT);
+  JLabel nameLabel = new JLabel("Name:",JLabel.LEFT);
   JLabel gridSizeLabel = new JLabel("Grid Size:", JLabel.LEFT);
   JLabel mineCountLabel = new JLabel("Number of Mines:", JLabel.LEFT);
   JTextField nameText = new JTextField("");
@@ -28,16 +28,16 @@ public class gameMenu {
   ImageIcon backImage = new ImageIcon("menuBack.png");
   JLabel titleLabel = new JLabel(titleImage);
   JLabel backLabel = new JLabel(backImage);
-  Border blackBorder = BorderFactory.createLineBorder(Color.BLACK, 5);
+  Border blackBorder = BorderFactory.createLineBorder(Color.BLACK, 2);
 
   
 
-	Color teal = new Color(2, 192, 180);
-	Color orange = new Color(255, 153, 0);
+  Color teal = new Color(2, 192, 180);
+  Color orange = new Color(255, 153, 0);
 
 
-	menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	menuFrame.setBounds(0,0,900, 600);
+  menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  menuFrame.setBounds(0,0,900, 600);
 
     optionsPanel.setLayout(null);
     optionsPanel.setBounds(225, 169, 450, 200);
@@ -95,12 +95,12 @@ public class gameMenu {
     exitGameButton.setBounds(500, 420, 150, 40);
 
     menuPanel.add(exitGameButton);
-  	menuPanel.add(startGameButton);
+    menuPanel.add(startGameButton);
 
-  	statusLabel.setLayout(null);
-  	statusLabel.setBounds(400, 475, 120, 60);
+    statusLabel.setLayout(null);
+    statusLabel.setBounds(400, 475, 120, 60);
     statusLabel.setOpaque(false);
-  	menuPanel.add(statusLabel);
+    menuPanel.add(statusLabel);
  
     startGameButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
@@ -109,6 +109,9 @@ public class gameMenu {
             statusLabel.setBorder(blackBorder);
             statusLabel.setOpaque(true);
             menuPanel.repaint();
+            String username = nameText.getText();
+            int gridSize = Integer.parseInt(gridSizeText.getText());
+            int mineCount = Integer.parseInt(mineCountText.getText());
          }          
       });
 
@@ -121,5 +124,5 @@ public class gameMenu {
     menuFrame.setLocationRelativeTo(null);
     menuFrame.setVisible(true);
 
-	}
-}	
+  }
+} 
